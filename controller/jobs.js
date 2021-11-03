@@ -7,14 +7,18 @@ const { exit } = require('process');
 exports.getJobs = (req, res, next) => {
     res.render('../view/index')
     const jobs = loadJobs();
-    console.log(newNew)
-
+    jobs.forEach(jobs => {
+        // console.log(jobs.position)
+        let jobDiv = document.createElement('div');
+        let newJobDiv = 
+    });
+    // console.log(strJob.company)
     // // console.log(jobs)
     // for(x = 0; x < jobs.length; x++) {
-    //     // let jobEach = jobs[x];
+        // let jobEach = jobs;
     //     // let newJob = document.createElement('div');
-    //     const newJobs = jobs.toString();
-    //     console.log(newJobs.id)
+    //     // const newJobs = jobs.toString();
+    //     // console.log(newJobs)
 
     // }
 }
