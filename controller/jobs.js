@@ -47,20 +47,17 @@ class Job {
 // role = role
 
 exports.getJobs = (req, res, next) => {
-    Job.fetchAll((products)=> {
-        res.render('../view/index', {
-            jobs: jobs
-        })
-        console.log(jobs)
+    const jobs = loadJobs();
+    res.render('../view/index', {
+
     })
-    // const jobs = loadJobs();
 
-    // for (x = 0; x < jobs.length; x++) {
-    //     // console.log(jobs[x].position)
+    for (x = 0; x < jobs.length; x++) {
+        // console.log(jobs[x].position)
 
-    //         let newJob =new Job(jobs[x].id, jobs[x].company, jobs[x].logo, jobs[x].logoBackground, jobs[x].position, jobs[x].postedAt, jobs[x].contract, jobs[x].location, jobs[x].website, jobs[x].apply, jobs[x].description, jobs[x].requirements, jobs[x].role )
-    //         console.log(newJob)
-    // }
+            let newJob =new Job(jobs[x].id, jobs[x].company, jobs[x].logo, jobs[x].logoBackground, jobs[x].position, jobs[x].postedAt, jobs[x].contract, jobs[x].location, jobs[x].website, jobs[x].apply, jobs[x].description, jobs[x].requirements, jobs[x].role )
+            console.log(newJob)
+    }
 }
 
 
