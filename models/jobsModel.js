@@ -3,8 +3,8 @@ const path = require('path');
 
 const p = path.join(
   path.dirname(process.mainModule.filename),
-  'data',
-  'products.json'
+  'data.json',
+//   'products.json'
 );
 
 
@@ -12,9 +12,10 @@ const getJobFromFile = cb => {
     fs.readFile(p, (err, fileContent) => {
         if(err){
             cb([]);
-            console.log('No jobs at this time!')
+            console.log(err)
         } else {
-            cb(JSON.parse(fileContent))
+            cb(JSON.parse(fileContent));
+            console.log('what what!')
         }
     })
 };
@@ -42,3 +43,4 @@ module.exports = class Job {
 
 }
 
+// module.exports = getJobFromFile;

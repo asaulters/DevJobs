@@ -10,6 +10,8 @@ const p = path.join(
     'data.json'
 );
 
+
+
 // const jobListSection = document.querySelector('.job-list');
 
 // class Job {
@@ -48,14 +50,16 @@ const p = path.join(
 // role = role
 
 exports.getJobs = (req, res, next) => {
-    const jobs = loadJobs();
+    // const jobs = loadJobs();
     jobsModel.fetchAll((job) =>{
+
         res.render('../view/index', {
             jobs: job,
             pageTitle: 'Job List',
             path: '/',
         })
     }
+ 
 
     )
     // res.render('../view/index', {
@@ -70,6 +74,13 @@ exports.getJobs = (req, res, next) => {
     // }
 }
 
+// const getJobs2 = {
+//     fetch('../data.json')
+//         .then (response => response.json())
+//         .then(data => {
+        
+//     })
+// }
 
 
 const loadJobs = function(res) {

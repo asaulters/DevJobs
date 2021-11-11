@@ -7,9 +7,9 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'views')
 
-const indexController = require('./routes/index');
+const indexRoute = require('./routes/index');
 
-app.use('/', indexController)
+app.use('/', indexRoute)
 
 app.listen(3000, console.log('listening to port 3000'))
 
