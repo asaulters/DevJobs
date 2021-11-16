@@ -3,14 +3,26 @@ const path = require('path')
 const { exit } = require('process');
 // const jobListSection = document.getElementsByClassName('.job-list')
 const jobsModel = require('../models/jobsModel')
-
+const dataFile = require('../data.json')
 
 const p = path.join(
     path.dirname(process.mainModule.filename),
     'data.json'
 );
 
+const loadJobs = function(res) {
+    try{
+        const databuffer = fs.readFileSync('data.json');
+        const dataJSON = databuffer.toString();
+        // console.log(dataJSON)
+        return JSON.parse(dataJSON);
+        
+    } catch(e) {
+        res.redirect('../view/404.ejs');
+        console.log(e) 
 
+    }
+};
 
 // const jobListSection = document.querySelector('.job-list');
 
@@ -49,15 +61,20 @@ const p = path.join(
 // requirements = requirements,
 // role = role
 
+// const printJobs = (jobJson) => {
+    
+// }
+
 exports.getJobs = (req, res, next) => {
     // const jobs = loadJobs();
     jobsModel.fetchAll((job) =>{
-
+        
         res.render('../view/index', {
-            jobs: job,
+            jobs: dataFile.position,
             pageTitle: 'Job List',
             path: '/',
         })
+        
     }
  
 
@@ -83,17 +100,5 @@ exports.getJobs = (req, res, next) => {
 // }
 
 
-const loadJobs = function(res) {
-    try{
-        const databuffer = fs.readFileSync('data.json');
-        const dataJSON = databuffer.toString();
-        // console.log(dataJSON)
-        return JSON.parse(dataJSON);
-        
-    } catch(e) {
-        res.redirect('../view/404.ejs');
-        console.log(e) 
 
-    }
-};
 

@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const { isArrayBufferView } = require('util/types');
+const dataFile = require('../data.json')
 
 const p = path.join(
   path.dirname(process.mainModule.filename),
@@ -15,10 +17,16 @@ const getJobFromFile = cb => {
             console.log(err)
         } else {
             cb(JSON.parse(fileContent));
-            console.log('what what!')
+
+            // for(x=0; x<dataFile.length; x++){
+            //     console.log(dataFile[x].position)
+            // }
+            // console.log(dataFile[0])
         }
     })
 };
+
+
 
 module.exports = class Job {
     constructor (id, company, logo, logoBackground, position, postedAt, contract, location, website, apply, description, requirements, role){
@@ -38,10 +46,21 @@ module.exports = class Job {
     }
 
     static fetchAll(cb){
-        getJobFromFile(cb)
-    }
+        getJobFromFile(cb);
+
+        
+
+    };
+
+   
+
 
 }
+// module.exports= arrNew = () => {
+//     const arr = JSON.parse(path);
+//     console.log(arr);
+// }
 
-// module.exports = getJobFromFile;
+
+// module.exports = arrNew;
 // 
