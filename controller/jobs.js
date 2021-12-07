@@ -1,9 +1,10 @@
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
 const { exit } = require('process');
 // const jobListSection = document.getElementsByClassName('.job-list')
-const jobsModel = require('../models/jobsModel')
-const dataFile = require('../data.json')
+const jobsModel = require('../models/jobsModel');
+const dataFile = require('../data.json');
+const jobs = require('../data.json');
 
 const p = path.join(
     path.dirname(process.mainModule.filename),
@@ -67,10 +68,10 @@ const loadJobs = function(res) {
 
 exports.getJobs = (req, res, next) => {
     // const jobs = loadJobs();
-    jobsModel.fetchAll((job) =>{
+    jobsModel.fetchAll((jobs) =>{
         
         res.render('../view/index', {
-            jobs: dataFile.position,
+            job: jobs,
             pageTitle: 'Job List',
             path: '/',
         })
