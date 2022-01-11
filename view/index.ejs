@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <h2>devjobs</h2>
+            <div class="header-slider">
+                <img 
+                src={require(’./assets/logos/pod.svg’)}
+                
+                alt="light ui">
+                <%- include('../icon-sun.svg') %>
+            </div>
+        </div>
+    </header>
+    <section class="job-list">
+
+        <% if (job.length > 0) { %>
+            <div class="grid">
+                <%for(var i = 0; i < job.length; i++){ %> 
+                    <article class="card listing-item">
+                        <header class="card__header">
+                            <img class="logoImg" src="<%- job[i].logo %>" alt="<%= job[i].company%> logo">
+
+                        </header>
+                        <div class="card__content">
+                            <div class="card_content_top">
+                                <p class="position_postedAt"><%= job[i].postedAt %> . <%= job[i].contract %></p>
+                            </div>
+                            <div class="card_content_bottom">
+                                <h1 class="position__position"><%= job[i].position %></h1>
+                                <p class="position__company"><%= job[i].company %></p>
+                                <a class="position__location"><%= job[i].location %></a>
+
+                            </div>
+
+                        </div>
+                    </article>
+                <% } %>        
+           
+            </div>
+        
+        <% } else { %>
+            <h1>No Jobs found today!</h1>    
+            <% } %>
+            
+    </section>
+</body>
+<script src="/app.js"></script>
+<script src="/controller/jobs.js"></script>
+</html>
