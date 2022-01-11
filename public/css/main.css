@@ -1,0 +1,60 @@
+
+
+.header-top{
+   background-image: url('https://solarsystem.nasa.gov/system/basic_html_elements/11561_Sun.png');
+   background-size: cover;
+}
+
+/* .listing-item{
+    border: 1px grey solid;
+    margin: 2%;
+
+} */
+/* .job-list{
+    display: grid;
+    
+} */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* align-items: stretch; */
+    grid-template-columns: 1fr auto;
+
+  }
+  .card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    margin-bottom: 10%;
+    width: 80%;
+  }
+
+  .card__header,
+.card__content {
+  padding: 1rem;
+}
+
+.card__header h1,
+.card__content h1,
+.card__content h2,
+.card__content p {
+  margin: 0;
+}
+
+.card_content_top{
+    padding-bottom: 5%;
+}
+
+
+/* 
+-------------------------------
+SM - Tablet
+----------------------------
+*/
+
+@media (min-width:450px){
+    
+
+
+
+
+}

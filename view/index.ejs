@@ -12,8 +12,11 @@
         <div class="header-top">
             <h2>devjobs</h2>
             <div class="header-slider">
-                <img src="/assets/desktop/icon-sun.svg" alt="light ui">
+                <img 
+                src={require(’./assets/logos/pod.svg’)}
                 
+                alt="light ui">
+                <%- include('../icon-sun.svg') %>
             </div>
         </div>
     </header>
@@ -24,18 +27,18 @@
                 <%for(var i = 0; i < job.length; i++){ %> 
                     <article class="card listing-item">
                         <header class="card__header">
-                            <img class="logoImg" src="<%= job[4].logo %>" alt="<%= job[4].company%> logo">
+                            <img class="logoImg" src="<%- job[i].logo %>" alt="<%= job[i].company%> logo">
 
                         </header>
                         <div class="card__content">
                             <div class="card_content_top">
-                                <p class="position_postedAt"><%= job[4].postedAt %> . <%= job[4].contract %></p>
+                                <p class="position_postedAt"><%= job[i].postedAt %> . <%= job[i].contract %></p>
                             </div>
                             <div class="card_content_bottom">
-                                <h1 class="position__position"><%= job[4].position %></h1>
-                                <h3 class="position__company">$<%= job[4].company %></h3>
-                                <p class="position__location"><%= job[4].location %></p>
-    
+                                <h1 class="position__position"><%= job[i].position %></h1>
+                                <p class="position__company"><%= job[i].company %></p>
+                                <a class="position__location"><%= job[i].location %></a>
+
                             </div>
 
                         </div>

@@ -72,14 +72,18 @@ exports.getJobs = (req, res, next) => {
         
         res.render('../view/index', {
             job: jobs,
+            // jobLogo: jobs.logo,
             pageTitle: 'Job List',
             path: '/',
         })
+        
         
     }
  
 
     )
+
+    
     // res.render('../view/index', {
 
     // })

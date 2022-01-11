@@ -33,7 +33,7 @@
   {
     "id": 2,
     "company": "Blogr",
-    "logo": "/assets/logos/blogr.svg",
+    "logo": "./assets/logos/blogr.svg",
     "logoBackground": "hsl(12, 79%, 52%)",
     "position": "Haskell and PureScript Dev",
     "postedAt": "20h ago",
@@ -126,7 +126,7 @@
   {
     "id": 5,
     "company": "Pod",
-    "logo": "/ggg.gif",
+    "logo": "./assets/logos/pod.svg",
     "logoBackground": "hsl(216, 46%, 14%)",
     "position": "Remote DevOps Engineer",
     "postedAt": "2d ago",
@@ -134,7 +134,6 @@
     "location": "Japan",
     "website": "https://example.com/pod",
     "apply": "https://example.com/pod/apply",
-    "imageUrl":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.seoclerk.com%2Fpics%2F626559-243fm01535738029.jpg&f=1&nofb=1",
     "description": "Join our dynamic team in developing Pod’s core products and supporting infrastructure. Our software is currently written in Java, VB.Net, React Native, React JS and others. You will help lead new initiatives to build and improve the testing, staging and deployment solutions. You will interact with all development teams, development leadership and our hosting/IT staff to define requirements and goals for the Dev Ops Platform.",
     "requirements": {
       "content": "We are looking for talented and motivated engineers who can hit the ground running and take our products to the next level. The engineers who are building our platform across the stack are always willing to go the extra mile to deliver the highest quality software and client experiences. Ideally, you would have:",
